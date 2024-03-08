@@ -22,6 +22,25 @@ def instructions():
 
  **** Instructions ****
 
+To begin choose the number of rounds you want to play or press enter for 
+infinite mode. If you choose infinite mode, you'll play until you decide to stop.
+
+Guessing the Secret Number:
+Once the game starts, you'll be given a range of numbers to guess from.
+You'll make guesses by entering a number within the specified range.
+After each guess, the game will provide feedback, letting you know if your guess is too high or too low.
+If you're close to running out of guesses, the game will warn you to be careful.
+
+Winning and Losing:
+If you guess the secret number within the allowed number of guesses, you win the round.
+If you run out of guesses before guessing the correct number, you lose the round.
+You can also choose to end the round by typing "xxx" if you need to quit.
+
+Additional Tips:
+Pay attention to the feedback provided by the game after each guess. 
+It will help you narrow down the possible range of the secret number.
+
+Have fun and good luck!
 
 
     ''')
