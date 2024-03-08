@@ -143,13 +143,25 @@ while rounds_played < num_rounds:
     while guess != secret and guesses_used < guesses_allowed:
 
         # ask the user to guess the number...
-        guess = int_check("Guess: ", low_num, high_num)
+        guess = input("Guess: ").lower()  # Modified to get user input as a string
 
         # check that they don't want to quit
         if guess == "xxx":
-            # set end_game to use so that the outer loop can be broken
+            print("🐔🐔🐔 Oops - You chickened out! 🐔🐔🐔.")
             end_game = "yes"
             break
+
+        # Convert the guess into an integer and proceed as before
+        try:
+            guess = int(guess)
+        except ValueError:
+            print("Please enter a valid number.")
+            continue
+
+        # check that guess is within the valid range
+        if guess < low_num or guess > high_num:
+            print("Please enter a number within the valid range.")
+            continue
 
         # check that guess is not a duplicate
         if guess in already_guessed:
@@ -165,6 +177,7 @@ while rounds_played < num_rounds:
         guesses_used += 1
 
         # compare the user's guess with the secret number set up feedback statement
+        # (code for feedback remains unchanged)
 
         # If we have guesses left...
         if guess < secret and guesses_used < guesses_allowed:
@@ -197,6 +210,7 @@ while rounds_played < num_rounds:
             print("\n💣💣💣 Careful - you have one guess left! 💣💣💣\n")
 
     print()
+    print("End of round")
 
     # Round ends here
 
@@ -206,7 +220,6 @@ while rounds_played < num_rounds:
 
     rounds_played += 1
 
-    print("End of round")
 
     # if users are in infinite mode , increase number of rounds!
     if mode == "infinite":
