@@ -225,7 +225,7 @@ while rounds_played < num_rounds:
         print(feedback)
 
         # Additional Feedback (warn user that they are running out of guesses
-        if guesses_used == guesses_allowed - 1:
+        if guesses_used == guesses_allowed - 1 and guess != secret:
             print("\n💣💣💣 Careful - you have one guess left! 💣💣💣\n")
 
     print()
@@ -239,11 +239,9 @@ while rounds_played < num_rounds:
 
     rounds_played += 1
 
-
     # if users are in infinite mode , increase number of rounds!
     if mode == "infinite":
         num_rounds += 1
-
 
 # Game loop ends here
 
