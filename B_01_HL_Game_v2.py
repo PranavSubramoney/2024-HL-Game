@@ -107,6 +107,9 @@ rounds_played = 0
 end_game = "no"
 feedback = ""
 
+game_history = []
+all_scores = []
+
 print("🔼🔼🔼 Welcome to Higher Lower Game 🔻🔻🔻")
 print()
 
@@ -206,6 +209,7 @@ while rounds_played < num_rounds:
             feedback = (f"Too high, please try a lower number. "
                         f"You've used {guesses_used} / {guesses_allowed} guesses")
 
+
         # when the secret number is guessed, we have three different feedback
         # options (lucky / 'phew' / well done)
         elif guess == secret:
@@ -243,6 +247,24 @@ while rounds_played < num_rounds:
     if mode == "infinite":
         num_rounds += 1
 
+    # Append the number of guesses used to the game history list
+    game_history.append(guesses_used)
+
 # Game loop ends here
 
 # Game History / Statistics area
+
+print("\n\n📊📊📊 Game Statistics 📊📊📊")
+
+if len(game_history) == 0:
+    print("No rounds played yet.")
+else:
+    best_score = min(game_history)
+    worst_score = max(game_history)
+    average_score = sum(game_history) / len(game_history)
+
+    print(f"Best Score: {best_score}")
+    print(f"Worst Score: {worst_score}")
+    print(f"Average Score: {average_score}")
+
+print("\nThank you for playing Higher Lower Game!")
