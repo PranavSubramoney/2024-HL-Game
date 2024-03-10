@@ -44,14 +44,15 @@ You'll make guesses by entering a number within the specified range.
 After each guess, the game will provide feedback, letting you know if your guess is too high or too low.
 If you're close to running out of guesses, the game will warn you to be careful.
 
-Winning and Losing:
 If you guess the secret number within the allowed number of guesses, you win the round.
 If you run out of guesses before guessing the correct number, you lose the round.
 You can also choose to end the round by typing "xxx" if you need to quit.
 
-Additional Tips:
-Pay attention to the feedback provided by the game after each guess. 
-It will help you narrow down the possible range of the secret number.
+Point system:
+Win in 1 guess = 10 points
+Win in 2 guesses = 5 points
+Win in 3 guesses = 3 points
+Win in 4 or more guesses = 1 points
 
 Have fun and good luck!
     ''')
@@ -184,6 +185,7 @@ def main():
         print(f"Points scored in this round: {score}")
 
     # Display game history if user wants to see it
+    print()
     show_history = yes_no("Do you want to see the game history? ")
     if show_history == "yes":
         print("\n🏆🏆🏆 Game History 🏆🏆🏆")
@@ -206,7 +208,7 @@ def main():
         print(f"Total Score: {total_score} points")
         print(f"Average Score: {average_score:.2f} points")
 
-    print("\nThank you for playing Higher Lower Game!")
+    print("\nThanks for playing!")
 
 
 if __name__ == "__main__":
