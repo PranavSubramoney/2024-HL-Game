@@ -15,11 +15,15 @@ def calculate_score(guess_used, max_guesses):
         return 5
     elif guess_used == 3:
         return 3
-    else:
+    elif guess_used == 4:
         return 1
+    elif guesses_used == guesses_allowed and guess == secret:
+        return 1
+    elif guesses_used == guesses_allowed and guess != secret:
+        return 0
 
+    # Main routine starts here
 
-# Main routine starts here
 
 def yes_no(question):
     while True:
@@ -35,6 +39,7 @@ def yes_no(question):
 def instructions():
     print('''
  **** Instructions ****
+
 To begin choose the number of rounds you want to play or press enter for 
 infinite mode. If you choose infinite mode, you'll play until you decide to stop.
 
@@ -53,6 +58,7 @@ Win in 1 guess = 10 points
 Win in 2 guesses = 5 points
 Win in 3 guesses = 3 points
 Win in 4 or more guesses = 1 points
+Lose = 0 points
 
 Have fun and good luck!
     ''')
